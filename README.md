@@ -1,5 +1,7 @@
 Scripts for convert PO to INI.
-How to use:
+---
+How to use
+---
 ConvertPOstoINI.py -> run this script when you need to join all po files converted to ini.
 It will create myini.ini with all *.po & *.pot files converted.
 
