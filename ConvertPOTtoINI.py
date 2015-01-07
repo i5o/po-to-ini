@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # 2014 - Ignacio Rodríguez <ignacio@sugarlabs.org>
 # This is for the .pot file.
-# How to puse: script.py file.pot, it will write a file.ini
+# How to use: script.py file.pot, it will write a file.ini
 
 import os
 import sys

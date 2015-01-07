@@ -42,7 +42,7 @@ def convert_po_to_ini(filename):
 
         msgid = msgid.replace(" ", "-")
         msgstr = msgstr.replace('\n', "<br>").replace('"<br>"', "<br>")
-        txt = msgid + ' = "' + msgstr + '"\n'
+        txt = msgid + '=%s\n' % (msgstr)
         if not txt.startswith(" = "):
             finaltext += txt
 
