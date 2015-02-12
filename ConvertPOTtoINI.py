@@ -42,7 +42,7 @@ def convert_pot_to_ini(filename):
             got = got.replace(x, "")
 
         got = got.replace(" ", "-")
-        txt = got + ' = %s\n' % original
+        txt = got + ' = %s\n' % original.replace('\n', ' ').replace('"', '')
         if not txt.startswith(" = "):
             finaltext += txt
         text = text[msgstr:]
