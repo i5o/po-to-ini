@@ -31,7 +31,9 @@ def convert_pot_to_ini(filename):
         "/",
         "'",
         ";",
-        "×"]
+        "×",
+        "¡",
+        "!"]
 
     msgid = text.find("msgid")
     msgstr = text.find("msgstr")

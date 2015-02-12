@@ -34,7 +34,9 @@ def convert_po_to_ini(filename):
         "/",
         "'",
         ";",
-        "×"]
+        "×",
+        "¡",
+        "!"]
 
     for match in re.finditer(
             r'^msgid "([^"]+)"\n^msgstr "([^"]+)"', text, flags=re.M):
