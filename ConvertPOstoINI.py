@@ -17,10 +17,13 @@ except:
 
 dirlist = os.listdir(".")
 final_ini = ""
+if "en.po" in dirlist:
+    dirlist.remove("en.po")
+    dirlist.insert(0, "en.po")
 
 total = 0
 for fil_e in dirlist:
-    if fil_e[-3:] == ".po" or fil_e[-4:] == ".pot":
+    if fil_e[-3:] == ".po":
         try:
             txt = convert_po_to_ini(fil_e)
             total += 1

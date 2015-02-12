@@ -12,7 +12,10 @@ import sys
 def convert_po_to_ini(filename):
     text = open(filename, "r").read()
     lang = os.path.basename(filename)[:-3]
-    finaltext = "[" + lang + "]\n"
+    # if lang = english don't add it to head
+    finaltext = ""
+    if lang != "en":
+        finaltext += "[" + lang + "]\n"
 
     REPLACE = [
         ",",
@@ -42,7 +45,7 @@ def convert_po_to_ini(filename):
 
         msgid = msgid.replace(" ", "-")
         msgstr = msgstr.replace('\n', "<br>").replace('"<br>"', "<br>")
-        txt = msgid + '=%s\n' % (msgstr)
+        txt = msgid + ' = %s\n' % (msgstr)
         if not txt.startswith(" = "):
             finaltext += txt
 
