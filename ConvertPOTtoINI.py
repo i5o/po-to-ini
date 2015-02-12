@@ -12,7 +12,7 @@ def convert_pot_to_ini(filename):
     filename = sys.argv[1]
     text = open(filename, "r").read()
     lang = os.path.basename(filename)[:-4]  # -4 = .pot
-    finaltext = "[" + lang + "]\n"
+    finaltext = ""
 
     REPLACE = [
         ",",
@@ -36,12 +36,13 @@ def convert_pot_to_ini(filename):
     msgid = text.find("msgid")
     msgstr = text.find("msgstr")
     while msgid >= 0:
-        got = text[msgid:msgstr - 1][7:-1]
+        original = text[msgid:msgstr - 1][7:-1]
+        got = str(original)
         for x in REPLACE:
             got = got.replace(x, "")
 
         got = got.replace(" ", "-")
-        txt = got + ' = \n'
+        txt = got + ' = %s\n' % original
         if not txt.startswith(" = "):
             finaltext += txt
         text = text[msgstr:]
